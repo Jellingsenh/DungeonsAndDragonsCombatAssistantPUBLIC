@@ -46,6 +46,9 @@ All devices:<br>
 &nbsp;&nbsp;&nbsp;&nbsp;i) `sudo apt update && sudo apt upgrade`<br>
 &nbsp;&nbsp;&nbsp;&nbsp;ii) `sudo apt install npm`<br>
 &nbsp;&nbsp;&nbsp;&nbsp;iii) `sudo apt install nodejs`<br>
+&nbsp;&nbsp;&nbsp;&nbsp;iv) `curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.0/install.sh | bash`<br>
+&nbsp;&nbsp;&nbsp;&nbsp;v) restart Ubuntu<br>
+&nbsp;&nbsp;&nbsp;&nbsp;vi) `nvm install 20.10.0`<br>
 &nbsp;&nbsp;d) navigate to the 'GUI/dnd-gui' directory ('cd /mnt/c/path_to_folder'), then enter the following commands:<br>
 &nbsp;&nbsp;&nbsp;&nbsp;i) `sudo npm install`<br>
 &nbsp;&nbsp;&nbsp;&nbsp;ii) `sudo npm install -g serve`<br>
