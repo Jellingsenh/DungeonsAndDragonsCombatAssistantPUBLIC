@@ -1,0 +1,252 @@
+<!-- XML for Tabletop Simulator Connector for D&D Combat Assistant -->
+<!-- Updated 03/31/2024 (Version 2.3) -->
+
+
+<!-- For GUID replacement, make sure you follow this convention for any function names (note the spaces): onClick = "functionName" -->
+
+<Panel id = "ipSelectorPanel" rectAlignment = "UpperRight" offsetXY = "-440 -10" width = "0" height = "0" padding = "0.0, 0.0, 0.0, 0.0" allowDragging = "true" returnToOriginalPositionWhenReleased = "false">
+    <VerticalLayout spacing = "5" childForceExpandHeight = "false" childForceExpandWidth = "false">
+        <InputField id = "ipaddress_input" minWidth = "160" minHeight = "30" visibility = "host" onSubmit = "storeIPAddress" placeholder = "Input server address:"></InputField>
+        <Button id = "change_ipaddress" minWidth = "160" minHeight = "30" visibility = "host" active = "false" onClick = "changeIPAddress">Change server address</Button>
+        <Button id = "get_players_button" minWidth = "160" minHeight = "30" visibility = "black" color = "#339933" onClick = "loadPlayerData" active = "false">Get PCs</Button>
+        <Button id = "addAPlayer" minWidth = "160" minHeight = "30" visibility = "black" color = "#cc0000" onClick = "addPlayerToggle" active = "false">Close Player Selector</Button>
+        <Button id = "showTimeDetails" minWidth = "160" minHeight = "30" visibility = "black" color = "#0474bf" onClick = "showTimeDetailsToggle" active = "false">Show time details</Button>
+    </VerticalLayout>
+</Panel>
+
+<Panel id = "playerSelectorPanel" width = "1000" height = "400" offsetXY = "0 140" raycastTarget = "false" padding = "0.0, 0.0, 0.0, 0.0" allowDragging = "true" returnToOriginalPositionWhenReleased = "false">
+    <VerticalLayout childForceExpandHeight = "false">
+        <Button id = "text_button" minHeight = "32" colors = "#d1d1d1|#d1d1d1|#d1d1d1|#d1d1d1" fontStyle = "bold" fontSize = "16px" active = "false">Choose a character:</Button>
+        <GridLayout id = "pc_list" padding = "30 0 20 0" spacing = "20 10" cellSize = "300 75" active = "false">
+            <Button id = "buttonId1" onClick = "playerSelected(Button One)" color = "#99ccff" fontStyle = "bold" fontSize = "16px" active = "false">Button One</Button>
+            <Button id = "buttonId2" onClick = "playerSelected(Button Two)" color = "#3399ff" fontStyle = "bold" fontSize = "16px" active = "false">Button Two</Button>
+            <Button id = "buttonId3" onClick = "playerSelected(Button Three)" color = "#ff99ff" fontStyle = "bold" fontSize = "16px" active = "false">Button Three</Button>
+            <Button id = "buttonId4" onClick = "playerSelected(Button Four)" color = "#cc99ff" fontStyle = "bold" fontSize = "16px" active = "false">Button Four</Button>
+            <Button id = "buttonId5" onClick = "playerSelected(Button Five)" color = "#ff0066" fontStyle = "bold" fontSize = "16px" active = "false">Button Five</Button>
+            <Button id = "buttonId6" onClick = "playerSelected(Button Six)" color = "#cc0000" fontStyle = "bold" fontSize = "16px" active = "false">Button Six</Button>
+            <Button id = "buttonId7" onClick = "playerSelected(Button Seven)" color = "#ffcc99" fontStyle = "bold" fontSize = "16px" active = "false">Button Seven</Button>
+            <Button id = "buttonId8" onClick = "playerSelected(Button Eight)" color = "#e48b07" fontStyle = "bold" fontSize = "16px" active = "false">Button Eight</Button>
+            <Button id = "buttonId9" onClick = "playerSelected(Button Nine)" color = "#00ffcc" fontStyle = "bold" fontSize = "16px" active = "false">Button Nine</Button>
+            <Button id = "buttonId10" onClick = "playerSelected(Button Ten)" color = "#009933" fontStyle = "bold" fontSize = "16px" active = "false">Button Ten</Button>
+            <Button id = "buttonId11" onClick = "playerSelected(Button Eleven)" color = "#ebebeb" fontStyle = "bold" fontSize = "16px" active = "false">Button Eleven</Button>
+            <Button id = "buttonId12" onClick = "playerSelected(Button Twelve)" color = "#bdbdbd" fontStyle = "bold" fontSize = "16px" active = "false">Button Twelve</Button>
+        </GridLayout>
+    </VerticalLayout>
+</Panel>
+
+<Panel id = "timeDetailsPanel" width = "710" height = "400" offsetXY = "150 270" raycastTarget = "false" padding = "0.0, 0.0, 0.0, 0.0" allowDragging = "true" returnToOriginalPositionWhenReleased = "false">
+    <VerticalLayout childForceExpandHeight = "false">
+        <Button id = "timeDetails" minHeight = "60" colors = "#5c7091|#5c7091|#5c7091|#5c7091" fontStyle = "bold" fontSize = "16px" active = "false">Current time:</Button>
+        <HorizontalLayout childForceExpandHeight = "false">
+            <Button id = "locationButton" minHeight = "50" color = "#3399ff" fontStyle = "bold" fontSize = "16px" active = "false">Location:</Button>
+            <Button id = "environmentButton" minHeight = "50" colors = "#42BE76|#42BE76|#42BE76|#42BE76" fontStyle = "bold" fontSize = "16px" active = "false">Environment:</Button>
+        </HorizontalLayout>
+        <!-- <GridLayout id = "details_list" padding = "30 0 20 0" spacing = "20 10" cellSize = "300 75" active = "false">
+        </GridLayout> -->
+    </VerticalLayout>
+</Panel>
+
+<Panel id = "initiativeEntryPanel">
+    <InputField id = "blueInitiative" visibility = "blue" allowDragging = "true" active = "false" returnToOriginalPositionWhenReleased = "false" onSubmit = "addPlayerInitiative" position = "0 0 0" placeholder = "Enter initiative total:"></InputField>
+    <InputField id = "purpleInitiative" visibility = "purple" allowDragging = "true" active = "false" returnToOriginalPositionWhenReleased = "false" onSubmit = "addPlayerInitiative" position = "0 0 0" placeholder = "Enter initiative total:"></InputField>
+    <InputField id = "greenInitiative" visibility = "green" onSubmit = "addPlayerInitiative" active = "false" allowDragging = "true" returnToOriginalPositionWhenReleased = "false" position = "0 0 0" placeholder = "Enter initiative total:"></InputField>
+    <InputField id = "orangeInitiative" visibility = "orange" onSubmit = "addPlayerInitiative" active = "false" allowDragging = "true" returnToOriginalPositionWhenReleased = "false" position = "0 0 0" placeholder = "Enter initiative total:"></InputField>
+    <InputField id = "tealInitiative" visibility = "teal" onSubmit = "addPlayerInitiative" active = "false" allowDragging = "true" returnToOriginalPositionWhenReleased = "false" position = "0 0 0" placeholder = "Enter initiative total:"></InputField>
+    <InputField id = "brownInitiative" visibility = "brown" onSubmit = "addPlayerInitiative" active = "false" allowDragging = "true" returnToOriginalPositionWhenReleased = "false" position = "0 0 0" placeholder = "Enter initiative total:"></InputField>
+    <InputField id = "pinkInitiative" visibility = "pink" onSubmit = "addPlayerInitiative" active = "false" allowDragging = "true" returnToOriginalPositionWhenReleased = "false" position = "0 0 0" placeholder = "Enter initiative total:"></InputField>
+    <InputField id = "redInitiative" visibility = "red" onSubmit = "addPlayerInitiative" active = "false" allowDragging = "true" returnToOriginalPositionWhenReleased = "false" position = "0 0 0" placeholder = "Enter initiative total:"></InputField>
+    <InputField id = "yellowInitiative" visibility = "yellow" onSubmit = "addPlayerInitiative" active = "false" allowDragging = "true" returnToOriginalPositionWhenReleased = "false" position = "0 0 0" placeholder = "Enter initiative total:"></InputField>
+    <InputField id = "whiteInitiative" visibility = "white" onSubmit = "addPlayerInitiative" active = "false" allowDragging = "true" returnToOriginalPositionWhenReleased = "false" position = "0 0 0" placeholder = "Enter initiative total:"></InputField>
+</Panel>
+
+<Panel id = "gmInitPanel" rectAlignment = "MiddleRight" offsetXY = "-10 120" width = "200" height = "0" padding = "0.0, 0.0, 0.0, 0.0" allowDragging = "true" returnToOriginalPositionWhenReleased = "false" raycastTarget = "false">
+    <VerticalLayout spacing = "10" childForceExpandHeight = "false">
+        <Button id = "requestInit" minHeight = "50" visibility = "black"  active = "false" onClick = "requestInitiative" color = "#ff6666" fontStyle = "bold" fontSize = "16px">Request Initiatve</Button>
+        <Button id = "refresh_combat_gm" minHeight = "50" visibility = "black" color = "#339933" fontStyle = "bold" fontSize = "16px" active = "false" onClick = "setUpTurnOrder">Refresh Initiative</Button>
+        <Button id = "end_turn_gm" minHeight = "50" visibility = "black" color = "#ff6666" fontStyle = "bold" fontSize = "16px" active = "false" onClick = "apiEndTurn">End Current Turn</Button>
+        <Button id = "end_combat_gm" minHeight = "50" visibility = "black" color = "#cc0000" fontStyle = "bold" fontSize = "16px" active = "false" onClick = "endCombat">End Combat</Button>
+    </VerticalLayout>
+</Panel>
+
+<Panel id = "gmInitViewPanel" rectAlignment = "MiddleRight" offsetXY = "-610 -220" width = "0" height = "0" raycastTarget = "false" padding = "0.0, 0.0, 0.0, 0.0" allowDragging = "true" returnToOriginalPositionWhenReleased = "false">
+    <VerticalLayout spacing = "10" childForceExpandHeight = "false" childForceExpandWidth = "false" childAlignment = "middleCenter">
+        <Button id = "text_button_2" minHeight = "80" minWidth = "600" visibility = "black" colors = "#83a2d4|#83a2d4|#83a2d4|#83a2d4" fontStyle = "bold" fontSize = "16px" active = "false">GM initiative list here</Button>
+        <Button id = "gm_roll_initiative" minHeight = "40" minWidth = "200" visibility = "black" color = "#0474bf" fontStyle = "bold" fontSize = "16px" active = "false" onClick = "rollGmInitiative">Roll new initiative!</Button>
+    </VerticalLayout>
+</Panel>
+
+<Panel id = "independentButtonsPanel">
+    <Button id = "end_turn_button" rectAlignment = "LowerCenter" offsetXY = "0 150" width = "200" height = "60" color = "#ff6666" fontStyle = "bold" fontSize = "16px" active = "false" allowDragging = "true" returnToOriginalPositionWhenReleased = "false" onClick = "apiEndTurn">End Turn</Button>
+    <Button id = "text_button_5" rectAlignment = "MiddleLeft" offsetXY = "560 285" width = "200" height = "420" colors = "#83a2d4|#83a2d4|#83a2d4|#83a2d4" fontStyle = "bold" fontSize = "16px" active = "false" allowDragging = "true" returnToOriginalPositionWhenReleased = "false">Party roll list here</Button>
+</Panel>
+
+<Panel id = "timedEffectInteractionPanel" rectAlignment = "MiddleLeft" offsetXY = "80 -80" width = "0" height = "0" padding = "0.0, 0.0, 0.0, 0.0" allowDragging = "true" returnToOriginalPositionWhenReleased = "false">
+    <VerticalLayout spacing = "4" childForceExpandHeight = "false" childForceExpandWidth = "false" childAlignment = "middleCenter">
+        <Button id = "add_timed_effect"  minWidth = "200" minHeight = "50" color = "#0474bf" fontStyle = "bold" fontSize = "16px" active = "false" onClick = "addTimedEffect">Add Timed Effect</Button>
+        <Button id = "closeTimedEffectViewer" minHeight = "30" minWidth = "200" visibility = "black" color = "#cc0000" onClick = "timedEffectViewToggle"  active = "false" fontSize = "8px">Close Timed Effect Viewer</Button>
+    </VerticalLayout>
+</Panel>
+
+<Panel id = "gmPartySkillPanel" rectAlignment = "MiddleRight" offsetXY = "-210 -120" width = "0" height = "0" padding = "0.0, 0.0, 0.0, 0.0" allowDragging = "true" returnToOriginalPositionWhenReleased = "false">
+    <VerticalLayout spacing = "5" childForceExpandHeight = "false" childForceExpandWidth = "false" childAlignment = "middleCenter">
+        <Button id = "requestPartySkill" minHeight = "50" minWidth = "200" visibility = "black" active = "false" onClick = "requestPartySkillCheck" color = "#ff6666" fontStyle = "bold" fontSize = "16px">Party Roll</Button>
+        <Button id = "openPartySkillViewer" minHeight = "30" minWidth = "160" visibility = "black" color = "#cc0000" onClick = "skillPopupToggle"  active = "false">Close Party Roll Viewer</Button>
+    </VerticalLayout>
+</Panel>
+
+<Panel id = "partySkillPanel">
+    <InputField id = "blueSkill" visibility = "blue" allowDragging = "true" active = "false" returnToOriginalPositionWhenReleased = "false" onSubmit = "addPlayerSkill" position = "0 -40 0" placeholder = "Enter total:"></InputField>
+    <InputField id = "purpleSkill" visibility = "purple" allowDragging = "true" active = "false" returnToOriginalPositionWhenReleased = "false" onSubmit = "addPlayerSkill" position = "0 -40 0" placeholder = "Enter total:"></InputField>
+    <InputField id = "greenSkill" visibility = "green" onSubmit = "addPlayerSkill" active = "false" allowDragging = "true" returnToOriginalPositionWhenReleased = "false" position = "0 -40 0" placeholder = "Enter total:"></InputField>
+    <InputField id = "orangeSkill" visibility = "orange" onSubmit = "addPlayerSkill" active = "false" allowDragging = "true" returnToOriginalPositionWhenReleased = "false" position = "0 -40 0" placeholder = "Enter total:"></InputField>
+    <InputField id = "tealSkill" visibility = "teal" onSubmit = "addPlayerSkill" active = "false" allowDragging = "true" returnToOriginalPositionWhenReleased = "false" position = "0 -40 0" placeholder = "Enter total:"></InputField>
+    <InputField id = "brownSkill" visibility = "brown" onSubmit = "addPlayerSkill" active = "false" allowDragging = "true" returnToOriginalPositionWhenReleased = "false" position = "0 -40 0" placeholder = "Enter total:"></InputField>
+    <InputField id = "pinkSkill" visibility = "pink" onSubmit = "addPlayerSkill" active = "false" allowDragging = "true" returnToOriginalPositionWhenReleased = "false" position = "0 -40 0" placeholder = "Enter total:"></InputField>
+    <InputField id = "redSkill" visibility = "red" onSubmit = "addPlayerSkill" active = "false" allowDragging = "true" returnToOriginalPositionWhenReleased = "false" position = "0 -40 0" placeholder = "Enter total:"></InputField>
+    <InputField id = "yellowSkill" visibility = "yellow" onSubmit = "addPlayerSkill" active = "false" allowDragging = "true" returnToOriginalPositionWhenReleased = "false" position = "0 -40 0" placeholder = "Enter total:"></InputField>
+    <InputField id = "whiteSkill" visibility = "white" onSubmit = "addPlayerSkill" active = "false" allowDragging = "true" returnToOriginalPositionWhenReleased = "false" position = "0 -40 0" placeholder = "Enter total:"></InputField>
+</Panel>
+
+<Panel id = "partyImagePanel">
+    <Button id="showImage"  width ="60" height = "40" visibility = "black" onClick = "showImage" image ="https://i.imgur.com/cpccV4k.jpeg" tooltip = "Project image" position = "716 514 0" allowDragging = "true" active = "true" returnToOriginalPositionWhenReleased = "false"></Button>
+    <Image id = "blackImage"  width ="900" height = "900" visibility = "black" image ="https://i.imgur.com/H8fzOCL.jpeg" active = "false" allowDragging = "true" returnToOriginalPositionWhenReleased = "false"></Image>
+    <Button id="closeBlackImage"  width ="60" height = "60" visibility = "black" onClick="closeImageBlack" image ="https://i.imgur.com/m1Jqr10.png" tooltip = "Close image" position = "510 -400 0" allowDragging = "true" active = "false" returnToOriginalPositionWhenReleased = "false"></Button>
+    <Image id = "blueImage"  width ="900" height = "900" visibility = "blue" image ="https://i.imgur.com/H8fzOCL.jpeg" active = "false" allowDragging = "true" returnToOriginalPositionWhenReleased = "false"></Image>
+    <Button id="closeBlueImage"  width ="60" height = "60" visibility = "blue" onClick="closeImageBlue" image ="https://i.imgur.com/m1Jqr10.png" tooltip = "Close image" position = "510 -400 0" allowDragging = "true" active = "false" returnToOriginalPositionWhenReleased = "false"></Button>
+    <Image id = "purpleImage"  width ="900" height = "900" visibility = "purple" image ="https://i.imgur.com/H8fzOCL.jpeg" active = "false" allowDragging = "true" returnToOriginalPositionWhenReleased = "false"></Image>
+    <Button id="closePurpleImage"  width ="60" height = "60" visibility = "purple" onClick="closeImagePurple" image ="https://i.imgur.com/m1Jqr10.png" tooltip = "Close image" position = "510 -400 0" allowDragging = "true" active = "false" returnToOriginalPositionWhenReleased = "false"></Button>
+    <Image id = "greenImage"  width ="900" height = "900" visibility = "green" image ="https://i.imgur.com/H8fzOCL.jpeg" active = "false" allowDragging = "true" returnToOriginalPositionWhenReleased = "false"></Image>
+    <Button id="closeGreenImage"  width ="60" height = "60" visibility = "green" onClick="closeImageGreen" image ="https://i.imgur.com/m1Jqr10.png" tooltip = "Close image" position = "510 -400 0" allowDragging = "true" active = "false" returnToOriginalPositionWhenReleased = "false"></Button>
+    <Image id = "orangeImage"  width ="900" height = "900" visibility = "orange" image ="https://i.imgur.com/H8fzOCL.jpeg" active = "false" allowDragging = "true" returnToOriginalPositionWhenReleased = "false"></Image>
+    <Button id="closeOrangeImage"  width ="60" height = "60" visibility = "orange" onClick="closeImageOrange" image ="https://i.imgur.com/m1Jqr10.png" tooltip = "Close image" position = "510 -400 0" allowDragging = "true" active = "false" returnToOriginalPositionWhenReleased = "false"></Button>
+    <Image id = "tealImage"  width ="900" height = "900" visibility = "teal" image ="https://i.imgur.com/H8fzOCL.jpeg" active = "false" allowDragging = "true" returnToOriginalPositionWhenReleased = "false"></Image>
+    <Button id="closeTealImage"  width ="60" height = "60" visibility = "teal" onClick="closeImageTeal" image ="https://i.imgur.com/m1Jqr10.png" tooltip = "Close image" position = "510 -400 0" allowDragging = "true" active = "false" returnToOriginalPositionWhenReleased = "false"></Button>
+    <Image id = "brownImage"  width ="900" height = "900" visibility = "brown" image ="https://i.imgur.com/H8fzOCL.jpeg" active = "false" allowDragging = "true" returnToOriginalPositionWhenReleased = "false"></Image>
+    <Button id="closeBrownImage"  width ="60" height = "60" visibility = "brown" onClick="closeImageBrown" image ="https://i.imgur.com/m1Jqr10.png" tooltip = "Close image" position = "510 -400 0" allowDragging = "true" active = "false" returnToOriginalPositionWhenReleased = "false"></Button>
+    <Image id = "pinkImage" width ="900" height = "900" visibility = "pink" image ="https://i.imgur.com/H8fzOCL.jpeg" active = "false" allowDragging = "true" returnToOriginalPositionWhenReleased = "false"></Image>
+    <Button id="closePinkImage"  width ="60" height = "60" visibility = "pink" onClick="closeImagePink" image ="https://i.imgur.com/m1Jqr10.png" tooltip = "Close image" position = "510 -400 0" allowDragging = "true" active = "false" returnToOriginalPositionWhenReleased = "false"></Button>
+    <Image id = "redImage"  width ="900" height = "900" visibility = "red" image ="https://i.imgur.com/H8fzOCL.jpeg" active = "false" allowDragging = "true" returnToOriginalPositionWhenReleased = "false"></Image>
+    <Button id="closeRedImage"  width ="60" height = "60" visibility = "red" onClick="closeImageRed" image ="https://i.imgur.com/m1Jqr10.png" tooltip = "Close image" position = "510 -400 0" allowDragging = "true" active = "false" returnToOriginalPositionWhenReleased = "false"></Button>
+    <Image id = "whiteImage"  width ="900" height = "900" visibility = "white" image ="https://i.imgur.com/H8fzOCL.jpeg" active = "false" allowDragging = "true" returnToOriginalPositionWhenReleased = "false"></Image>
+    <Button id="closeWhiteImage"  width ="60" height = "60" visibility = "white" onClick="closeImageWhite" image ="https://i.imgur.com/m1Jqr10.png" tooltip = "Close image" position = "510 -400 0" allowDragging = "true" active = "false" returnToOriginalPositionWhenReleased = "false"></Button>
+    <Image id = "yellowImage"  width ="900" height = "900" visibility = "yellow" image ="https://i.imgur.com/H8fzOCL.jpeg" active = "false" allowDragging = "true" returnToOriginalPositionWhenReleased = "false"></Image>
+    <Button id="closeYellowImage"  width ="60" height = "60" visibility = "yellow" onClick="closeImageYellow" image ="https://i.imgur.com/m1Jqr10.png" tooltip = "Close image" position = "510 -400 0" allowDragging = "true" active = "false" returnToOriginalPositionWhenReleased = "false"></Button>
+</Panel>
+
+<Panel id = "timedEffectsCreationPanel" offsetXY = "-150 -70" width = "0" height = "0" raycastTarget = "false" padding = "0.0, 0.0, 0.0, 0.0" allowDragging = "true" returnToOriginalPositionWhenReleased = "false">
+    <VerticalLayout spacing = "5" childForceExpandHeight = "false" childForceExpandWidth = "false" childAlignment = "middleCenter">
+        <Button id = "text_button_6" minHeight = "32" minWidth = "320" colors = "#83a2d4|#83a2d4|#83a2d4|#83a2d4" fontStyle = "bold" fontSize = "16px" active = "false" visibility = "black">Enter an effect:</Button>
+        <InputField id = "timed_effect_name" minHeight = "32" minWidth = "300" visibility = "black" onEndEdit = "addTimedEffectName" active = "false" placeholder = "Name:" fontStyle = "bold"></InputField>
+        <InputField id = "timed_effect_effect" minHeight = "32" minWidth = "300" visibility = "black" onEndEdit = "addTimedEffectEffect" active = "false" placeholder = "Effect:" fontStyle = "bold"></InputField>
+        <InputField id = "timed_effect_targets" minHeight = "32" minWidth = "300" visibility = "black" onEndEdit = "addTimedEffectTargets" active = "false" placeholder = "Target(s):" fontStyle = "bold"></InputField>
+        <HorizontalLayout spacing = "10" childForceExpandHeight = "false" childForceExpandWidth = "false" childAlignment = "middleCenter">
+            <InputField id = "timed_effect_duration" minHeight = "32" minWidth = "130" visibility = "black" onEndEdit = "addTimedEffectDuration" active = "false" placeholder = "Rounds:" fontStyle = "bold"></InputField>
+            <InputField id = "timed_effect_duration_minutes" minHeight = "32" minWidth = "130" visibility = "black" onEndEdit = "addTimedEffectDurationMinutes" active = "false" placeholder = "Minutes:" fontStyle = "bold"></InputField>
+        </HorizontalLayout>
+        <HorizontalLayout spacing = "10" childForceExpandHeight = "false" childForceExpandWidth = "false" childAlignment = "middleCenter">
+            <InputField id = "timed_effect_duration_hours" minHeight = "32" minWidth = "130" visibility = "black" onEndEdit = "addTimedEffectDurationHours" active = "false" placeholder = "Hours:" fontStyle = "bold"></InputField>
+            <InputField id = "timed_effect_duration_days" minHeight = "32" minWidth = "130" visibility = "black" onEndEdit = "addTimedEffectDurationDays" active = "false" placeholder = "Days:" fontStyle = "bold"></InputField>
+        </HorizontalLayout>
+        <HorizontalLayout spacing = "40" childForceExpandHeight = "false" childForceExpandWidth = "false" childAlignment = "middleCenter">
+            <Button id = "confirm_timed_effect" minHeight = "32" minWidth = "100" visibility = "black" color = "#0474bf" fontStyle = "bold" fontSize = "16px" active = "false" onClick = "confirmTimedEffect">Create</Button>
+            <Button id = "cancel_timed_effect" minHeight = "32" minWidth = "100" visibility = "black" color = "#ff6666" fontStyle = "bold" fontSize = "16px" active = "false" onClick = "closeTimedEffectCreator">Cancel</Button>
+        </HorizontalLayout>
+    </VerticalLayout>
+</Panel>
+
+<Panel id = "timedEffectsDisplayPanel" rectAlignment = "UpperLeft" offsetXY = "80 -8" width = "0" height = "0" raycastTarget = "false" padding = "0.0, 0.0, 0.0, 0.0" allowDragging = "true" returnToOriginalPositionWhenReleased = "false">
+    <VerticalLayout spacing = "5" childForceExpandHeight = "false" childForceExpandWidth = "false" childAlignment = "middleCenter">
+        <HorizontalLayout spacing = "80">
+            <Button id = "timed_effects_up_button" minWidth = "30" minHeight = "32" color = "#83a2d4" fontStyle = "bold" fontSize = "16px" active = "false" onCLick = "timedEffectsUp">↑</Button>
+            <Button id = "text_button_7"  minWidth = "160" minHeight = "32" colors = "#83a2d4|#83a2d4|#83a2d4|#83a2d4" fontStyle = "bold" fontSize = "16px" active = "false">Current Effects (0):</Button>
+            <Button id = "timed_effects_down_button" minWidth = "30" minHeight = "32" color = "#83a2d4" fontStyle = "bold" fontSize = "16px" active = "false" onCLick = "timedEffectsDown">↓</Button>
+        </HorizontalLayout>
+        <VerticalLayout spacing = "0" childForceExpandHeight = "false" childForceExpandWidth = "false" childAlignment = "middleCenter">
+                <HorizontalLayout spacing = "2" childForceExpandHeight = "false" childForceExpandWidth = "false" childAlignment = "middleCenter">
+                    <Button id = "text_button_17" minWidth = "100" minHeight = "50" colors = "#42BE76|#42BE76|#42BE76|#42BE76" fontStyle = "bold" fontSize = "16px" active = "false">Effect x:</Button>
+                    <Button id = "text_button_8" minWidth = "360" minHeight = "50" colors = "#5c7091|#5c7091|#5c7091|#5c7091" fontStyle = "bold" fontSize = "16px" active = "false">Timed effect 1 here</Button>
+                </HorizontalLayout>
+                <HorizontalLayout spacing = "2" childForceExpandHeight = "false" childForceExpandWidth = "false" childAlignment = "middleCenter">
+                    <Button id = "text_button_18" minWidth = "100" minHeight = "30" colors = "#C0392B|#C0392B|#C0392B|#C0392B" fontStyle = "bold" fontSize = "16px" active = "false">Target(s):</Button>
+                    <Button id = "text_button_32" minWidth = "360" minHeight = "30" colors = "#5c7091|#5c7091|#5c7091|#5c7091" fontStyle = "bold" fontSize = "16px" active = "false">Timed effect 1 targets here</Button>
+                </HorizontalLayout>
+                <HorizontalLayout spacing = "2" childForceExpandHeight = "false" childForceExpandWidth = "false" childAlignment = "middleCenter">
+                    <Button id = "text_button_19" minWidth = "100" minHeight = "30" colors = "#0474bf|#0474bf|#0474bf|#0474bf" fontStyle = "bold" fontSize = "16px" active = "false">Time left:</Button>
+                    <Button id = "text_button_33" minWidth = "360" minHeight = "30" colors = "#5c7091|#5c7091|#5c7091|#5c7091" fontStyle = "bold" fontSize = "16px" active = "false">Timed effect 1 time left here</Button>
+                </HorizontalLayout>
+        </VerticalLayout>
+        <VerticalLayout spacing = "0" childForceExpandHeight = "false" childForceExpandWidth = "false" childAlignment = "middleCenter">
+                <HorizontalLayout spacing = "2" childForceExpandHeight = "false" childForceExpandWidth = "false" childAlignment = "middleCenter">
+                    <Button id = "text_button_20" minWidth = "100" minHeight = "50" colors = "#42BE76|#42BE76|#42BE76|#42BE76" fontStyle = "bold" fontSize = "16px" active = "false">Effect x:</Button>
+                    <Button id = "text_button_9" minWidth = "360" minHeight = "50" colors = "#5c7091|#5c7091|#5c7091|#5c7091" fontStyle = "bold" fontSize = "16px" active = "false">Timed effect 2 here</Button>
+                </HorizontalLayout>
+                <HorizontalLayout spacing = "2" childForceExpandHeight = "false" childForceExpandWidth = "false" childAlignment = "middleCenter">
+                    <Button id = "text_button_21" minWidth = "100" minHeight = "30" colors = "#C0392B|#C0392B|#C0392B|#C0392B" fontStyle = "bold" fontSize = "16px" active = "false">Target(s):</Button>
+                    <Button id = "text_button_34" minWidth = "360" minHeight = "30" colors = "#5c7091|#5c7091|#5c7091|#5c7091" fontStyle = "bold" fontSize = "16px" active = "false">Timed effect 2 targets here</Button>
+                </HorizontalLayout>
+                <HorizontalLayout spacing = "2" childForceExpandHeight = "false" childForceExpandWidth = "false" childAlignment = "middleCenter">
+                    <Button id = "text_button_22" minWidth = "100" minHeight = "30" colors = "#0474bf|#0474bf|#0474bf|#0474bf" fontStyle = "bold" fontSize = "16px" active = "false">Time left:</Button>
+                    <Button id = "text_button_35" minWidth = "360" minHeight = "30" colors = "#5c7091|#5c7091|#5c7091|#5c7091" fontStyle = "bold" fontSize = "16px" active = "false">Timed effect 2 time left here</Button>
+                </HorizontalLayout>
+        </VerticalLayout>
+        <VerticalLayout spacing = "0" childForceExpandHeight = "false" childForceExpandWidth = "false" childAlignment = "middleCenter">
+                <HorizontalLayout spacing = "2" childForceExpandHeight = "false" childForceExpandWidth = "false" childAlignment = "middleCenter">
+                    <Button id = "text_button_23" minWidth = "100" minHeight = "50" colors = "#42BE76|#42BE76|#42BE76|#42BE76" fontStyle = "bold" fontSize = "16px" active = "false">Effect x:</Button>
+                    <Button id = "text_button_10" minWidth = "360" minHeight = "50" colors = "#5c7091|#5c7091|#5c7091|#5c7091" fontStyle = "bold" fontSize = "16px" active = "false">Timed effect 3 here</Button>
+                </HorizontalLayout>
+                <HorizontalLayout spacing = "2" childForceExpandHeight = "false" childForceExpandWidth = "false" childAlignment = "middleCenter">
+                    <Button id = "text_button_24" minWidth = "100" minHeight = "30" colors = "#C0392B|#C0392B|#C0392B|#C0392B" fontStyle = "bold" fontSize = "16px" active = "false">Target(s):</Button>
+                    <Button id = "text_button_36" minWidth = "360" minHeight = "30" colors = "#5c7091|#5c7091|#5c7091|#5c7091" fontStyle = "bold" fontSize = "16px" active = "false">Timed effect 3 targets here</Button>
+                </HorizontalLayout>
+                <HorizontalLayout spacing = "2" childForceExpandHeight = "false" childForceExpandWidth = "false" childAlignment = "middleCenter">
+                    <Button id = "text_button_25" minWidth = "100" minHeight = "30" colors = "#0474bf|#0474bf|#0474bf|#0474bf" fontStyle = "bold" fontSize = "16px" active = "false">Time left:</Button>
+                    <Button id = "text_button_37" minWidth = "360" minHeight = "30" colors = "#5c7091|#5c7091|#5c7091|#5c7091" fontStyle = "bold" fontSize = "16px" active = "false">Timed effect 3 time left here</Button>
+                </HorizontalLayout>
+        </VerticalLayout>
+        <VerticalLayout spacing = "0" childForceExpandHeight = "false" childForceExpandWidth = "false" childAlignment = "middleCenter">
+                <HorizontalLayout spacing = "2" childForceExpandHeight = "false" childForceExpandWidth = "false" childAlignment = "middleCenter">
+                    <Button id = "text_button_26" minWidth = "100" minHeight = "50" colors = "#42BE76|#42BE76|#42BE76|#42BE76" fontStyle = "bold" fontSize = "16px" active = "false">Effect x:</Button>
+                    <Button id = "text_button_15" minWidth = "360" minHeight = "50" colors = "#5c7091|#5c7091|#5c7091|#5c7091" fontStyle = "bold" fontSize = "16px" active = "false">Timed effect 4 here</Button>
+                </HorizontalLayout>
+                <HorizontalLayout spacing = "2" childForceExpandHeight = "false" childForceExpandWidth = "false" childAlignment = "middleCenter">
+                    <Button id = "text_button_27" minWidth = "100" minHeight = "30" colors = "#C0392B|#C0392B|#C0392B|#C0392B" fontStyle = "bold" fontSize = "16px" active = "false">Target(s):</Button>
+                    <Button id = "text_button_38" minWidth = "360" minHeight = "30" colors = "#5c7091|#5c7091|#5c7091|#5c7091" fontStyle = "bold" fontSize = "16px" active = "false">Timed effect 4 targets here</Button>
+                </HorizontalLayout>
+                <HorizontalLayout spacing = "2" childForceExpandHeight = "false" childForceExpandWidth = "false" childAlignment = "middleCenter">
+                    <Button id = "text_button_28" minWidth = "100" minHeight = "30" colors = "#0474bf|#0474bf|#0474bf|#0474bf" fontStyle = "bold" fontSize = "16px" active = "false">Time left:</Button>
+                    <Button id = "text_button_39" minWidth = "360" minHeight = "30" colors = "#5c7091|#5c7091|#5c7091|#5c7091" fontStyle = "bold" fontSize = "16px" active = "false">Timed effect 4 time left here</Button>
+                </HorizontalLayout>
+        </VerticalLayout>
+        <VerticalLayout spacing = "0" childForceExpandHeight = "false" childForceExpandWidth = "false" childAlignment = "middleCenter">
+                <HorizontalLayout spacing = "2" childForceExpandHeight = "false" childForceExpandWidth = "false" childAlignment = "middleCenter">
+                    <Button id = "text_button_29" minWidth = "100" minHeight = "50" colors = "#42BE76|#42BE76|#42BE76|#42BE76" fontStyle = "bold" fontSize = "16px" active = "false">Effect x:</Button>
+                    <Button id = "text_button_16" minWidth = "360" minHeight = "50" colors = "#5c7091|#5c7091|#5c7091|#5c7091" fontStyle = "bold" fontSize = "16px" active = "false">Timed effect 5 here</Button>
+                </HorizontalLayout>
+                <HorizontalLayout spacing = "2" childForceExpandHeight = "false" childForceExpandWidth = "false" childAlignment = "middleCenter">
+                    <Button id = "text_button_30" minWidth = "100" minHeight = "30" colors = "#C0392B|#C0392B|#C0392B|#C0392B" fontStyle = "bold" fontSize = "16px" active = "false">Target(s):</Button>
+                    <Button id = "text_button_40" minWidth = "360" minHeight = "30" colors = "#5c7091|#5c7091|#5c7091|#5c7091" fontStyle = "bold" fontSize = "16px" active = "false">Timed effect 5 targets here</Button>
+                </HorizontalLayout>
+                <HorizontalLayout spacing = "2" childForceExpandHeight = "false" childForceExpandWidth = "false" childAlignment = "middleCenter">
+                    <Button id = "text_button_31" minWidth = "100" minHeight = "30" colors = "#0474bf|#0474bf|#0474bf|#0474bf" fontStyle = "bold" fontSize = "16px" active = "false">Time left:</Button>
+                    <Button id = "text_button_41" minWidth = "360" minHeight = "30" colors = "#5c7091|#5c7091|#5c7091|#5c7091" fontStyle = "bold" fontSize = "16px" active = "false">Timed effect 5 time left here</Button>
+                </HorizontalLayout>
+        </VerticalLayout>
+    </VerticalLayout>
+</Panel>
+
+<Panel id = "initiativeOrderPanel" rectAlignment = "LowerCenter" offsetXY = "-760 140" width = "0" height = "0" raycastTarget = "false" padding = "0.0, 0.0, 0.0, 0.0" allowDragging = "true" returnToOriginalPositionWhenReleased = "false">
+    <VerticalLayout spacing = "5" childForceExpandHeight = "false" childForceExpandWidth = "false" childAlignment = "middleCenter">
+        <HorizontalLayout spacing = "50" childForceExpandHeight = "false" childForceExpandWidth = "false" childAlignment = "middleCenter">
+            <Button id = "turn_left_button" minWidth = "50" minHeight = "40" color = "#83a2d4" fontStyle = "bold" fontSize = "16px" active = "false"  onClick = "turnOrderLeft" visibility = "black">←</Button>
+            <Button id = "text_button_3" minWidth = "350" minHeight = "40" fontStyle = "bold" fontSize = "16px" active = "false" colors = "#83a2d4|#83a2d4|#83a2d4|#83a2d4">Initiatve Order (0 characters):</Button>
+            <Button id = "turn_right_button" minWidth = "50" minHeight = "40" color = "#83a2d4" fontStyle = "bold" fontSize = "16px" active = "false" onClick = "turnOrderRight" visibility = "black">→</Button>
+        </HorizontalLayout>
+        <HorizontalLayout spacing = "5">
+            <Button id = "text_button_4" minWidth = "300" minHeight = "80" fontStyle = "bold" colors = "#5c7091|#5c7091|#5c7091|#5c7091" fontSize = "16px" active = "false">Init slot 1</Button>
+            <Button id = "text_button_11" minWidth = "300" minHeight = "80" fontStyle = "bold" colors = "#5c7091|#5c7091|#5c7091|#5c7091" fontSize = "16px" active = "false">Init slot 2</Button>
+            <Button id = "text_button_12" minWidth = "300" minHeight = "80" fontStyle = "bold" colors = "#5c7091|#5c7091|#5c7091|#5c7091" fontSize = "16px" active = "false">Init slot 3</Button>
+            <Button id = "text_button_13" minWidth = "300" minHeight = "80" fontStyle = "bold" colors = "#5c7091|#5c7091|#5c7091|#5c7091" fontSize = "16px" active = "false">Init slot 4</Button>
+            <Button id = "text_button_14" minWidth = "300" minHeight = "80" fontStyle = "bold" colors = "#5c7091|#5c7091|#5c7091|#5c7091" fontSize = "16px" active = "false">Init slot 5</Button>
+        </HorizontalLayout>
+    </VerticalLayout>
+</Panel>

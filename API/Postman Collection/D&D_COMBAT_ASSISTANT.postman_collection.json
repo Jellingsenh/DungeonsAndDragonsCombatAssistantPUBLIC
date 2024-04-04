@@ -1,0 +1,1343 @@
+{
+	"info": {
+		"_postman_id": "a9386ade-973c-4abd-8aae-468c5f6c9218",
+		"name": "D&D_COMBAT_ASSISTANT",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "19373582"
+	},
+	"item": [
+		{
+			"name": "Games",
+			"item": [
+				{
+					"name": "Get All Game Names",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:9001/getAllGameNames/ra",
+							"host": [
+								"localhost"
+							],
+							"port": "9001",
+							"path": [
+								"getAllGameNames",
+								"ra"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Save Game",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "Test_Game"
+						},
+						"url": {
+							"raw": "localhost:9001/saveGame",
+							"host": [
+								"localhost"
+							],
+							"port": "9001",
+							"path": [
+								"saveGame"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Current Game",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:9001/getCurrentGame",
+							"host": [
+								"localhost"
+							],
+							"port": "9001",
+							"path": [
+								"getCurrentGame"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Load Game",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:9001/loadGame/Test_Game",
+							"host": [
+								"localhost"
+							],
+							"port": "9001",
+							"path": [
+								"loadGame",
+								"Test_Game"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Game",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:9001/deleteGame/TestGame2",
+							"host": [
+								"localhost"
+							],
+							"port": "9001",
+							"path": [
+								"deleteGame",
+								"TestGame2"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Characters",
+			"item": [
+				{
+					"name": "Get All Character Names",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:9001/getAllCharacterNames/l/noSearchHere",
+							"host": [
+								"localhost"
+							],
+							"port": "9001",
+							"path": [
+								"getAllCharacterNames",
+								"l",
+								"noSearchHere"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get All Arena Character Names",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:9001/getAllArenaCharacterNames",
+							"host": [
+								"localhost"
+							],
+							"port": "9001",
+							"path": [
+								"getAllArenaCharacterNames"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Combat PCs",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:9001/getCombatPCs",
+							"host": [
+								"localhost"
+							],
+							"port": "9001",
+							"path": [
+								"getCombatPCs"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Combat Characters",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:9001/getCombatCharacters",
+							"host": [
+								"localhost"
+							],
+							"port": "9001",
+							"path": [
+								"getCombatCharacters"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Sideline Characters",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:9001/getSidelineCharacters",
+							"host": [
+								"localhost"
+							],
+							"port": "9001",
+							"path": [
+								"getSidelineCharacters"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Character",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:9001/getCharacter/Captain Und",
+							"host": [
+								"localhost"
+							],
+							"port": "9001",
+							"path": [
+								"getCharacter",
+								"Captain Und"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Is Character an NPC",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:9001/isCharacterNpc/TestPC",
+							"host": [
+								"localhost"
+							],
+							"port": "9001",
+							"path": [
+								"isCharacterNpc",
+								"TestPC"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Add Character",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"TestCharacter2\",\r\n    \"npc\": true\r\n}"
+						},
+						"url": {
+							"raw": "localhost:9001/addCharacter",
+							"host": [
+								"localhost"
+							],
+							"port": "9001",
+							"path": [
+								"addCharacter"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Enter Character Into Arena",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:9001/enterCharacterIntoArena/TestCharacter2",
+							"host": [
+								"localhost"
+							],
+							"port": "9001",
+							"path": [
+								"enterCharacterIntoArena",
+								"TestCharacter2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Remove Character From Arena",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:9001/removeCharacterFromArena/TestCharacter1",
+							"host": [
+								"localhost"
+							],
+							"port": "9001",
+							"path": [
+								"removeCharacterFromArena",
+								"TestCharacter1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Move Character To Combat",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:9001/moveCharacterToCombat/TestCharacter",
+							"host": [
+								"localhost"
+							],
+							"port": "9001",
+							"path": [
+								"moveCharacterToCombat",
+								"TestCharacter"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Move Character To Sideline",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:9001/moveCharacterToSideline/TestCharacter1",
+							"host": [
+								"localhost"
+							],
+							"port": "9001",
+							"path": [
+								"moveCharacterToSideline",
+								"TestCharacter1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Duplicate Character",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "9"
+						},
+						"url": {
+							"raw": "localhost:9001/duplicateCharacter/TestCharacter",
+							"host": [
+								"localhost"
+							],
+							"port": "9001",
+							"path": [
+								"duplicateCharacter",
+								"TestCharacter"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Remove All Duplicates",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:9001/removeAllDuplicates",
+							"host": [
+								"localhost"
+							],
+							"port": "9001",
+							"path": [
+								"removeAllDuplicates"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Edit Character",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"TestPC\",\r\n    \"mainAttacksAndSpells\": \"Sword +66, 1d6 +2 dmg\",\r\n    \"armorClass\": \"233\"\r\n}"
+						},
+						"url": {
+							"raw": "localhost:9001/editCharacter/TestPC",
+							"host": [
+								"localhost"
+							],
+							"port": "9001",
+							"path": [
+								"editCharacter",
+								"TestPC"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Character",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:9001/deleteCharacter/TestPC",
+							"host": [
+								"localhost"
+							],
+							"port": "9001",
+							"path": [
+								"deleteCharacter",
+								"TestPC"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Groups",
+			"item": [
+				{
+					"name": "Get All Group Names",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:9001/getAllGroupNames",
+							"host": [
+								"localhost"
+							],
+							"port": "9001",
+							"path": [
+								"getAllGroupNames"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Save Group",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Test Group\",\r\n    \"characterNames\":[\"TestPC\",\"TestCharacter2\"]\r\n}"
+						},
+						"url": {
+							"raw": "localhost:9001/saveGroup",
+							"host": [
+								"localhost"
+							],
+							"port": "9001",
+							"path": [
+								"saveGroup"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Enter Group Into Arena",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:9001/enterGroupIntoArena/Test_Group",
+							"host": [
+								"localhost"
+							],
+							"port": "9001",
+							"path": [
+								"enterGroupIntoArena",
+								"Test_Group"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Group Members",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:9001/getGroupMembers/test1",
+							"host": [
+								"localhost"
+							],
+							"port": "9001",
+							"path": [
+								"getGroupMembers",
+								"test1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Group",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:9001/deleteGroup/Test_Group",
+							"host": [
+								"localhost"
+							],
+							"port": "9001",
+							"path": [
+								"deleteGroup",
+								"Test_Group"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Initiative",
+			"item": [
+				{
+					"name": "Roll Initiative",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "[\r\n    {\r\n        \"initiativeTotal\": 10,\r\n        \"characterName\": \"TestPC\"\r\n    }\r\n]"
+						},
+						"url": {
+							"raw": "localhost:9001/rollInitiative",
+							"host": [
+								"localhost"
+							],
+							"port": "9001",
+							"path": [
+								"rollInitiative"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Initiative Order",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "localhost:9001/getInitiativeOrder",
+							"host": [
+								"localhost"
+							],
+							"port": "9001",
+							"path": [
+								"getInitiativeOrder"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Character Initiative Total",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "localhost:9001/getCharacterInitiativeTotal/Vik",
+							"host": [
+								"localhost"
+							],
+							"port": "9001",
+							"path": [
+								"getCharacterInitiativeTotal",
+								"Vik"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Edit Initiative Order",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "[\r\n    {\r\n        \"initiativeTotal\": 10,\r\n        \"characterName\": \"TestPC\"\r\n    },\r\n    {\r\n        \"initiativeTotal\": 10,\r\n        \"characterName\": \"TestCharacter2\"\r\n    }\r\n]"
+						},
+						"url": {
+							"raw": "localhost:9001/editInitiativeOrder",
+							"host": [
+								"localhost"
+							],
+							"port": "9001",
+							"path": [
+								"editInitiativeOrder"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Next Turn",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "localhost:9001/nextTurn",
+							"host": [
+								"localhost"
+							],
+							"port": "9001",
+							"path": [
+								"nextTurn"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Current Character",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "localhost:9001/getCurrentCharacter",
+							"host": [
+								"localhost"
+							],
+							"port": "9001",
+							"path": [
+								"getCurrentCharacter"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Next Character",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "localhost:9001/getNextCharacter",
+							"host": [
+								"localhost"
+							],
+							"port": "9001",
+							"path": [
+								"getNextCharacter"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "TimedEffects",
+			"item": [
+				{
+					"name": "Add Timed Effect",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Test Effect2\",\r\n    \"effect\":\"Test\",\r\n    \"targets\":\"Test\",\r\n    \"timeRemaining\": {\r\n        \"rounds\": 2,\r\n        \"minutes\": 0,\r\n        \"hours\": 2,\r\n        \"days\": 0,\r\n        \"years\": 0\r\n    },\r\n    \"endingInitiative\":1\r\n}"
+						},
+						"url": {
+							"raw": "localhost:9001/addTimedEffect",
+							"host": [
+								"localhost"
+							],
+							"port": "9001",
+							"path": [
+								"addTimedEffect"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Edit Timed Effect",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"4\",\r\n    \"effect\":\"Test\",\r\n    \"targets\":\"Test\",\r\n    \"timeRemaining\": 100,\r\n    \"endingInitiative\":1\r\n}"
+						},
+						"url": {
+							"raw": "localhost:9001/editTimedEffect",
+							"host": [
+								"localhost"
+							],
+							"port": "9001",
+							"path": [
+								"editTimedEffect"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Timed Effects",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:9001/getTimedEffects",
+							"host": [
+								"localhost"
+							],
+							"port": "9001",
+							"path": [
+								"getTimedEffects"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Remove Timed Effect",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:9001/removeTimedEffect/Test Effect1",
+							"host": [
+								"localhost"
+							],
+							"port": "9001",
+							"path": [
+								"removeTimedEffect",
+								"Test Effect1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "DM controls",
+			"item": [
+				{
+					"name": "Get Time",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "TestGame"
+						},
+						"url": {
+							"raw": "localhost:9001/getTime",
+							"host": [
+								"localhost"
+							],
+							"port": "9001",
+							"path": [
+								"getTime"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Reset Time",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "TestGame"
+						},
+						"url": {
+							"raw": "localhost:9001/resetTime",
+							"host": [
+								"localhost"
+							],
+							"port": "9001",
+							"path": [
+								"resetTime"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Add Time",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"rounds\": 1,\r\n    \"minutes\": 0,\r\n    \"hours\": 1,\r\n    \"days\": 100,\r\n    \"years\": 4\r\n}"
+						},
+						"url": {
+							"raw": "localhost:9001/addTime",
+							"host": [
+								"localhost"
+							],
+							"port": "9001",
+							"path": [
+								"addTime"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Subtract Time",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"years\": \"1\"\r\n}"
+						},
+						"url": {
+							"raw": "localhost:9001/subtractTime",
+							"host": [
+								"localhost"
+							],
+							"port": "9001",
+							"path": [
+								"subtractTime"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Time Details",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "TestGame"
+						},
+						"url": {
+							"raw": "localhost:9001/getTimeDetails",
+							"host": [
+								"localhost"
+							],
+							"port": "9001",
+							"path": [
+								"getTimeDetails"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Set Time Details",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"yearNotation\": \"Testyear\",\r\n    \"daysInAYear\": 366,\r\n    \"months\": [\r\n        {\r\n            \"name\": \"Testmonth\",\r\n            \"days\": 31\r\n        },\r\n        {\r\n            \"name\": \"Testmonth2\",\r\n            \"days\": 0\r\n        },\r\n        {\r\n            \"name\": \"Testmonth3\",\r\n            \"days\": 0\r\n        },\r\n        {\r\n            \"name\": \"Testmonth4\",\r\n            \"days\": 0\r\n        },\r\n        {\r\n            \"name\": \"Testmonth5\",\r\n            \"days\": 0\r\n        },\r\n        {\r\n            \"name\": \"Testmonth6\",\r\n            \"days\": 0\r\n        },\r\n        {\r\n            \"name\": \"Testmonth7\",\r\n            \"days\": 0\r\n        },\r\n        {\r\n            \"name\": \"Testmonth8\",\r\n            \"days\": 0\r\n        },\r\n        {\r\n            \"name\": \"Testmonth9\",\r\n            \"days\": 0\r\n        }\r\n    ]\r\n}"
+						},
+						"url": {
+							"raw": "localhost:9001/setTimeDetails",
+							"host": [
+								"localhost"
+							],
+							"port": "9001",
+							"path": [
+								"setTimeDetails"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Environment",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "TestGame"
+						},
+						"url": {
+							"raw": "localhost:9001/getEnvironment",
+							"host": [
+								"localhost"
+							],
+							"port": "9001",
+							"path": [
+								"getEnvironment"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Change Environment",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "Cold & Stormy"
+						},
+						"url": {
+							"raw": "localhost:9001/changeEnvironment",
+							"host": [
+								"localhost"
+							],
+							"port": "9001",
+							"path": [
+								"changeEnvironment"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Location",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "TestGame"
+						},
+						"url": {
+							"raw": "localhost:9001/getLocation",
+							"host": [
+								"localhost"
+							],
+							"port": "9001",
+							"path": [
+								"getLocation"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Change Location",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "Pi, Piu, Graava"
+						},
+						"url": {
+							"raw": "localhost:9001/changeLocation",
+							"host": [
+								"localhost"
+							],
+							"port": "9001",
+							"path": [
+								"changeLocation"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Current Month",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "TestGame"
+						},
+						"url": {
+							"raw": "localhost:9001/getCurrentMonth",
+							"host": [
+								"localhost"
+							],
+							"port": "9001",
+							"path": [
+								"getCurrentMonth"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
