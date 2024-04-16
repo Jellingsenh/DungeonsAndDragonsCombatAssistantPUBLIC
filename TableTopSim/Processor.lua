@@ -1,6 +1,6 @@
 -- Tabletop Simulator Connector for D&D Combat Assistant
 -- Made by Benjamin Kim & Joshua Haynes, April 2023
--- Updated 3/31/2024 (Version 2.3)
+-- Updated 4/16/2024 (Version 2.4)
 
 
 -- Tabletop Object variables:
@@ -703,8 +703,9 @@ function setNextTurn(nextPlayer)
         nextTurnName = "Nobody"
     end
     
-    displayTurnOrder() -- performs api call
-    displayTimedEffects() -- perfmors api call
+    displayTurnOrder() -- api call
+    displayTimedEffects() -- api call
+    apiGetTimeDetails() -- api calls x3
 end
 
 function announceTime(currRound)
@@ -791,6 +792,8 @@ function getToCurrChar()
         else 
             -- print("failure caught")
             print("There was a problem getting the current character.")
+            turnOrderLeft()
+            turnOrderRight()
         end
         
     else
@@ -915,13 +918,11 @@ function makeInitTextButton(initSlotID, initChar)
         -- print("no failure")
     else 
         -- print("failure caught")
-        charName = "Nobody"
+        -- charName = "Nobody"
         print("There was a problem getting a character name.")
+        turnOrderLeft()
+        turnOrderRight()
     end
-    -- charName = initChar.name
-    -- if charName ~= nil then 
-    --     print("name: "..charName) 
-    -- end
     UI.setAttribute(initSlotID, "text", charName)
     UI.setAttribute(initSlotID, "resizeTextForBestFit", "false")
    

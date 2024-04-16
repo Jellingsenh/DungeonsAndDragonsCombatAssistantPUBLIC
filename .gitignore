@@ -3,3 +3,6 @@
 .project
 .settings
 # *.txt
+postgresql-binaries/
+postgresql-binaries.zip/
+dbData

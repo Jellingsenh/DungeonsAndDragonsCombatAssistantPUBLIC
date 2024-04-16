@@ -916,7 +916,7 @@ public class DndDatabase {
 		while (dataLoaded.next()) {
 			foundGame.setName(dataLoaded.getString("name"));
 			foundGame.setRealTime(dataLoaded.getLong("realtime"));
-			foundGame.setTime(dataLoaded.getInt("time"));
+			foundGame.setTime(dataLoaded.getLong("time"));
 			foundGame.setEnvironment(dataLoaded.getString("environment"));
 			foundGame.setLocation(dataLoaded.getString("location"));
 			foundGame.setCombatCharacters(getCombatCharacterListFromTable(foundGame.getName()));
