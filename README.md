@@ -2,7 +2,7 @@ Dungeons & Dragons Combat Assistant<br>
 Created by Joshua Haynes<br>
 26 December 2021<br>
 Version: 2.4<br>
-Updated: 16 April 2024<br>
+Updated: 18 April 2024<br>
 
 --------------------
 

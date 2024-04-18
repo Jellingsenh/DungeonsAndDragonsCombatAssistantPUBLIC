@@ -1,6 +1,6 @@
 -- Tabletop Simulator Connector for D&D Combat Assistant
 -- Made by Benjamin Kim & Joshua Haynes, April 2023
--- Updated 4/16/2024 (Version 2.4)
+-- Updated 4/18/2024 (Version 2.4)
 
 
 -- Tabletop Object variables:
@@ -209,7 +209,7 @@ endEffectAdded= false;
 -- Core functions:
 
 function onLoad()
-    broadcastToAll("Loading the D&D Combat Assistant...")
+    broadcastToAll("Loading the D&D Combat Assistant (Version 2.4)...")
     -- replaceXmlGuid(XML_STRING, "12345") -- testing only
     if isTabletopObject then
         setupObjectXmlUI()
@@ -791,7 +791,7 @@ function getToCurrChar()
             -- print("no failure")
         else 
             -- print("failure caught")
-            print("There was a problem getting the current character.")
+            print("There was a problem getting the current character. Refresh initiative.")
             turnOrderLeft()
             turnOrderRight()
         end
@@ -919,7 +919,7 @@ function makeInitTextButton(initSlotID, initChar)
     else 
         -- print("failure caught")
         -- charName = "Nobody"
-        print("There was a problem getting a character name.")
+        print("There was a problem getting a character name.  Refresh initiative.")
         turnOrderLeft()
         turnOrderRight()
     end
