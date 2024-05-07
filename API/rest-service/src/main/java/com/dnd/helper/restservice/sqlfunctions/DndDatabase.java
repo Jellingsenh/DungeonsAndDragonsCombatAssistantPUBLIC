@@ -1,16 +1,13 @@
 package com.dnd.helper.restservice.sqlfunctions;
 
-import java.io.File;
+//import java.io.File;
 import java.io.IOException;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.util.Collections;
-import java.util.HashMap;
-import java.util.Map;
-import java.util.Scanner;
+//import java.util.Scanner;
 import java.util.Vector;
 
 import com.dnd.helper.restservice.gamedata.CharacterGroup;
@@ -33,23 +30,23 @@ public class DndDatabase {
 	public DndDatabase() throws ClassNotFoundException, SQLException, IOException {
 		getPasswordAndPort();
 		initializeDatabase();
+//		System.out.println("initialized database");
 	}
 
 	private void getPasswordAndPort() throws IOException {
-		
 		String newDatabasePort = "5432";
 		String newDatabasePassword = "password";
 		
-		Scanner myReader = new Scanner(new File("properties.txt"));
-		while (myReader.hasNextLine()) {
-			String data = myReader.nextLine();
-			if (data.contains("databasePort")) {
-				newDatabasePort = data.substring(data.indexOf("=")+1);
-			} else if (data.contains("databasePassword")) {
-				newDatabasePassword = data.substring(data.indexOf("=")+1);
-			}
-		}
-	    myReader.close();
+//		Scanner myReader = new Scanner(new File("properties.txt")); // commented this area for maven build (properties.txt was out of scope, not in src folder)
+//		while (myReader.hasNextLine()) {
+//			String data = myReader.nextLine();
+//			if (data.contains("databasePort")) {
+//				newDatabasePort = data.substring(data.indexOf("=")+1);
+//			} else if (data.contains("databasePassword")) {
+//				newDatabasePassword = data.substring(data.indexOf("=")+1);
+//			}
+//		}
+//	    myReader.close();
 	    		
 		if (newDatabasePort != null) this.DB_URL = "jdbc:postgresql://localhost:"+newDatabasePort+"/postgres";
 		if (newDatabasePassword != null) this.PASS = newDatabasePassword;
@@ -57,8 +54,14 @@ public class DndDatabase {
 
 	void initializeDatabase() throws ClassNotFoundException, SQLException {
 		Class.forName("org.postgresql.Driver");
-		dbConnection = DriverManager.getConnection(DB_URL, USER, PASS);
-		
+//		System.out.println("initializing connection");
+//		System.out.println(DB_URL);
+//		System.out.println(USER);
+//		System.out.println(PASS);
+		dbConnection = DriverManager.getConnection(DB_URL, USER, PASS); // josh here
+//		System.out.println("initialized connection");
+
+				
 		try {
 			dbConnection.prepareStatement("CREATE SCHEMA savedata;").executeUpdate();
 			System.out.println("SaveData schema created successfully.");

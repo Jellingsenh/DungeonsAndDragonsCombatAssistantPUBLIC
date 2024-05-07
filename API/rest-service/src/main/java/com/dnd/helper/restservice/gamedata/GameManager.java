@@ -588,7 +588,7 @@ public class GameManager {
 	}
 
 	public String removeTimedEffect(String effectName) {
-		int count = 0;
+//		int count = 0;
 		for (TimedEffect effect: gameData.getCurrentEffects()) {
 			if (effect.getName().equals(effectName)) {
 				if(gameData.removeEffect(effect)) {
@@ -597,7 +597,7 @@ public class GameManager {
 					return "Timed Effect " + effectName + " was not ended.";
 				}
 			}
-			count += 1;
+//			count += 1;
 		}
 		return "Timed Effect " + effectName + " does not exist.";
 	}

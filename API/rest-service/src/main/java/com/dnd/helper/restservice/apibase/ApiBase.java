@@ -644,11 +644,11 @@ public class ApiBase {
 	private Month createErrorMonth(String errorMessage) {
 		return new Month(errorMessage);
 	}
-	private Vector<Month> createErrorMonthVector(String errorMessage) {
-		Vector<Month> errorMonthVector = new Vector<Month>();
-		errorMonthVector.add(createErrorMonth(errorMessage));
-		return errorMonthVector;
-	}
+//	private Vector<Month> createErrorMonthVector(String errorMessage) {
+//		Vector<Month> errorMonthVector = new Vector<Month>();
+//		errorMonthVector.add(createErrorMonth(errorMessage));
+//		return errorMonthVector;
+//	}
 	private Vector<DndCharacterMinimal> createErrorInitiativeVector(String errorMessage) {
 		Vector<DndCharacterMinimal> errorInitiativeVector = new Vector<DndCharacterMinimal>();
 		errorInitiativeVector.add(new DndCharacterMinimal(errorMessage));

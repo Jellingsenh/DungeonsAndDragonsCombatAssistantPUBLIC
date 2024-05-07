@@ -2,7 +2,7 @@ Dungeons & Dragons Combat Assistant<br>
 Created by Joshua Haynes<br>
 26 December 2021<br>
 Version: 2.4<br>
-Updated: 18 April 2024<br>
+Updated: 7 May 2024<br>
 
 --------------------
 
@@ -28,7 +28,7 @@ How to setup & run the D&D Combat Assistant:<br>
 
 2) Setup server:<br>
 &nbsp;&nbsp;a) download & install Eclipse: https://www.eclipse.org/downloads/<br>
-&nbsp;&nbsp;b) download the DungeonsAndDragonsCombatAssistant codebase: https://github.com/Jellingsenh/DungeonsAndDragonsCombatAssistant<br>
+&nbsp;&nbsp;b) download the DungeonsAndDragonsCombatAssistant codebase (above)<br>
 &nbsp;&nbsp;c) Import the project in Eclipse:<br>
 &nbsp;&nbsp;&nbsp;&nbsp;i) Select File -> Import -> Maven -> Existing Maven Projects.<br>
 &nbsp;&nbsp;&nbsp;&nbsp;ii) Select the 'API/rest-service' directory.<br>
@@ -42,7 +42,7 @@ Windows only:<br>
 &nbsp;&nbsp;a) Get Windows subsystem for Linux: https://learn.microsoft.com/en-us/windows/wsl/install.<br>
 &nbsp;&nbsp;b) Ensure Ubuntu is installed.<br>
 All devices:<br>
-&nbsp;&nbsp;c) install React (open Ubuntu for Windows, open Terminal for Mac, and enter the commands below):<br>
+&nbsp;&nbsp;c) install npm (open Ubuntu for Windows or open Terminal for Mac, and enter the commands below):<br>
 &nbsp;&nbsp;&nbsp;&nbsp;i) `sudo apt update && sudo apt upgrade`<br>
 &nbsp;&nbsp;&nbsp;&nbsp;ii) `sudo apt install npm`<br>
 &nbsp;&nbsp;&nbsp;&nbsp;iii) `sudo apt install nodejs`<br>
